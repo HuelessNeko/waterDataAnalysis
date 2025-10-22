@@ -1,14 +1,14 @@
 import numpy as np
 import pandas as pd
-import mongomock
+import  mongomock
 
 
 # Paths to the CSVs files, all in one place
 paths = [
-    "Data/2021-dec16.csv",
-    "Data/2021-oct21.csv",
-    "Data/2022-nov16.csv",
-    "Data/2022-oct7.csv",
+    "2021-dec16.csv",
+    "2021-oct21.csv",
+    "2022-nov16.csv",
+    "2022-oct7.csv",
 ]
 
 # Read only the needed columns from each file and stack them vertically

@@ -7,12 +7,14 @@ import os
 
 app = Flask(__name__)
 
+
 # Data loading and preprocessing
 def load_data():
     """Load and preprocess all CSV files from the Data directory"""
-    data_dir = os.path.join(os.path.dirname(__file__), 'Data')
+    # CORRECTED PATH: Go up one level (..) from /api and into the /data folder
+    data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
     csv_files = glob.glob(os.path.join(data_dir, '*.csv'))
-    
+
     dfs = []
     for file in csv_files:
         df = pd.read_csv(file)
@@ -20,7 +22,7 @@ def load_data():
         if 'timestamp' in df.columns:
             df['timestamp'] = pd.to_datetime(df['timestamp']).dt.isoformat()
         dfs.append(df)
-    
+
     # Combine all dataframes
     if dfs:
         return pd.concat(dfs, ignore_index=True)
@@ -159,3 +161,4 @@ def internal_error(error):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
