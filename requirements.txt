@@ -1,1 +1,6 @@
-flask pandas streamlit plotly mongomock numpy
+flask
+pandas
+streamlit 
+plotly 
+mongomock 
+numpy
