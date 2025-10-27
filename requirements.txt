@@ -1,0 +1,6 @@
+flask
+pandas
+streamlit 
+plotly 
+mongomock 
+numpy
